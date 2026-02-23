@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/feder/ontologies/2026/1/tennis/"
+     xml:base="http://www.semanticweb.org/feder/ontologies/2026/1/tennis/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:schema="https://schema.org/"
+     xmlns:tennis="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis">
+        <dc:creator>Federico Chirco</dc:creator>
+        <dc:date>2026-01-01</dc:date>
+        <dc:description xml:lang="it">Un&apos;ontologia per la modellazione di tornei, incontri, giocatori e risultati nel dominio del tennis professionistico.</dc:description>
+        <dc:title xml:lang="it">Ontologia del Tennis</dc:title>
+        <dc:title xml:lang="en">Tennis Ontology</dc:title>
+	<dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+	<dc:rights xml:lang="en">Creative Commons Attribution 4.0 International (CC BY 4.0)</dc:rights>
+        <vann:preferredNamespacePrefix>tennis</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://www.semanticweb.org/feder/ontologies/2026/1/tennis#</vann:preferredNamespaceUri>
+        <rdfs:label xml:lang="it">Ontologia del Tennis</rdfs:label>
+        <rdfs:label>Tennis Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocaIncontro -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocaIncontro">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoDa"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoDa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoInSuperficie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoInSuperficie">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haGiocatoA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haGiocatoA">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#partecipaA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#siSvolgeA"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haIncontro -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haIncontro">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#parteDellaCompetizione"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haPartecipante -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haPartecipante">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#partecipaA"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haVincitore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haVincitore">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoDa"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#incontroSuccessivo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#incontroSuccessivo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#parteDellaCompetizione -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#parteDellaCompetizione">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#partecipaA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#partecipaA">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#siSvolgeA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#siSvolgeA">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#vince -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#vince">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#dataDiNascita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#dataDiNascita">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haDataInizio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#haDataInizio">
+        <rdfs:domain rdf:resource="https://schema.org/SportsEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#montepremi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#montepremi"/>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#puntiATP -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#puntiATP"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#ArbitroDiSedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#ArbitroDiSedia">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">Persona che dirige un incontro di tennis dal seggiolone arbitrale.</rdfs:comment>
+        <rdfs:label xml:lang="it">ArbitroDiSedia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Campione -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Campione">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#vince"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:comment xml:lang="it">Giocatore che vince almeno una finale di un torneo di tennis.</rdfs:comment>
+        <rdfs:label xml:lang="it">Campione</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Località"/>
+        <rdfs:comment xml:lang="it">Località urbana in cui si svolge un torneo di tennis.</rdfs:comment>
+        <rdfs:label xml:lang="it">Città</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:comment xml:lang="it">Incontro conclusivo di un torneo che determina il vincitore.</rdfs:comment>
+        <rdfs:label xml:lang="it">Finale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finalista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finalista">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocaIncontro"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <rdfs:comment xml:lang="it">Giocatore che partecipa a un incontro di tipo finale.</rdfs:comment>
+        <rdfs:label xml:lang="it">Finalista</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">Persona che partecipa a tornei e incontri di tennis.</rdfs:comment>
+        <rdfs:label xml:lang="it">Giocatore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro">
+        <rdfs:subClassOf rdf:resource="https://schema.org/SportsEvent"/>
+        <rdfs:comment xml:lang="it">Evento sportivo tra giocatori che fa parte di un torneo.</rdfs:comment>
+        <rdfs:label xml:lang="it">Incontro</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#IncontroDiSingolare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#IncontroDiSingolare">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#giocatoDa"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Incontro"/>
+        <rdfs:comment xml:lang="it">Incontro di tennis disputato da due giocatori.</rdfs:comment>
+        <rdfs:label xml:lang="it">IncontroDiSingolare</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Località -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Località">
+        <rdfs:comment xml:lang="it">Luogo geografico associato a un evento sportivo.</rdfs:comment>
+        <rdfs:label xml:lang="it">Località</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Cemento"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Erba"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Tipo di superficie del campo su cui si gioca un incontro.</rdfs:comment>
+        <rdfs:label xml:lang="it">Superficie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo">
+        <rdfs:subClassOf rdf:resource="https://schema.org/SportsEvent"/>
+        <rdfs:comment xml:lang="it">Competizione di tennis composta da più incontri.</rdfs:comment>
+        <rdfs:label xml:lang="it">Torneo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:label>foaf:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/SportsEvent -->
+
+    <owl:Class rdf:about="https://schema.org/SportsEvent">
+        <rdfs:label>schema:SportsEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Alcaraz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Alcaraz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Sinner"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-05-05T10:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Cemento -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Cemento">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#DelPotro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#DelPotro">
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1988-05-23T12:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Nadal"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-05-22T12:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Erba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Erba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1981-10-08T12:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Londra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Londra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Nadal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Nadal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+        <tennis:vince rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Finale"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-06-03T12:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Parigi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Parigi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Città"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+        <tennis:siSvolgeA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Parigi"/>
+        <tennis:haDataInizio rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-05-27T10:00:00Z</tennis:haDataInizio>
+        <tennis:puntiATP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</tennis:puntiATP>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Finale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Finale">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Nadal"/>
+        <tennis:giocatoInSuperficie rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta"/>
+        <tennis:haVincitore rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Nadal"/>
+        <tennis:parteDellaCompetizione rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Quarti -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Quarti">
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#DelPotro"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer"/>
+        <tennis:giocatoInSuperficie rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta"/>
+        <tennis:haVincitore rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer"/>
+        <tennis:incontroSuccessivo rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Semifinale"/>
+        <tennis:parteDellaCompetizione rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Semifinale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Semifinale">
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Federer"/>
+        <tennis:giocatoInSuperficie rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta"/>
+        <tennis:haVincitore rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic"/>
+        <tennis:incontroSuccessivo rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012Finale"/>
+        <tennis:parteDellaCompetizione rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#RolandGarros2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Sinner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Sinner">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Giocatore"/>
+        <tennis:partecipaA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025"/>
+        <tennis:vince rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025Finale"/>
+        <tennis:dataDiNascita rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2001-08-16T12:00:00Z</tennis:dataDiNascita>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#TerraBattuta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Superficie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Torneo"/>
+        <tennis:haPartecipante rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Djokovic"/>
+        <tennis:siSvolgeA rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Londra"/>
+        <tennis:haDataInizio rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-13T10:00:00Z</tennis:haDataInizio>
+        <tennis:puntiATP rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</tennis:puntiATP>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025Finale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025Finale">
+        <rdf:type rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Finale"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Alcaraz"/>
+        <tennis:giocatoDa rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Sinner"/>
+        <tennis:giocatoInSuperficie rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Erba"/>
+        <tennis:haVincitore rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Sinner"/>
+        <tennis:parteDellaCompetizione rdf:resource="http://www.semanticweb.org/feder/ontologies/2026/1/tennis#Wimbledon2025"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
